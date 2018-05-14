@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'rails', '4.2.6'
-gem 'mysql2', '>= 0.3.13', '< 0.5'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
@@ -18,8 +17,14 @@ gem "paperclip", "~> 5.2.1"
 gem 'dropzonejs-rails'
 gem "figaro", "~> 1.1.0"
 
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end
+
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  # Call 'byebug' anywhere in the code to stop execution and get a deb
+  gem 'mysql2', '>= 0.3.13', '< 0.5'
   gem 'byebug'
 end
 
